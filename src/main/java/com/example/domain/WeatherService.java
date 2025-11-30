@@ -1,6 +1,9 @@
 package com.example.domain;
 
+import com.example.listener.LoggingRetryListener;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
@@ -10,8 +13,9 @@ import org.springframework.web.client.RestClient;
 
 
 @Service
-@Slf4j
 public class WeatherService {
+
+    private static final Logger log = LoggerFactory.getLogger(WeatherService.class);
 
     private final RestClient weatherRestClient;
 
