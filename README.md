@@ -32,9 +32,8 @@ Attempt 3  ← retry #2
 @Recover   ← called after 3 failures 
 ```
 
-Spring retries the method only when a ResourceAccessException occurs.
+Spring retries the method only when a `ResourceAccessException` occurs.
 This exception happens during:
-
 - read timeouts
 
 - connection timeouts
@@ -42,6 +41,8 @@ This exception happens during:
 - low level network I/O issues
 
 In short, whenever the external service is slow or unreachable.
+
+---
 
 `maxAttempts = 3`
 
@@ -67,6 +68,7 @@ Spring waits a little longer before each retry:
 
 This is called exponential backoff, and it prevents overloading a slow service.
 
+---
 
 `requestFactory.setReadTimeout(Duration.ofSeconds(2))`
 
