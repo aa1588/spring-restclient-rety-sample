@@ -1,4 +1,4 @@
-name: Dynamic Proxy Demo CI
+name: RestClient-Retry Example
 
 on:
   push:
